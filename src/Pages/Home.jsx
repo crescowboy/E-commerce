@@ -1,23 +1,37 @@
-// frontend/src/pages/Home.js
-
+// src/components/Home.js
 import React, { useState, useEffect } from 'react';
 import ProductCard from './ProductCard';
 
-
 const Home = () => {
   const [featuredProducts, setFeaturedProducts] = useState([]);
+  const [specialOffers, setSpecialOffers] = useState([]);
+  const [popularCategories, setPopularCategories] = useState([]);
 
   useEffect(() => {
-    // Aquí podrías hacer una solicitud a tu backend para obtener productos destacados
-    // Supongamos que obtienes los productos de algún servicio o API
-    // Ejemplo con una lista estática de productos para demostración
+    // Aquí puedes hacer solicitudes a tu backend para obtener datos específicos
+    // Supongamos que obtienes datos de algún servicio o API
+    // Ejemplo con listas estáticas de productos, ofertas especiales y categorías para demostración
     const sampleFeaturedProducts = [
-      { id: 1, name: 'Producto Destacado 1', price: 24.99 },
-      { id: 2, name: 'Producto Destacado 2', price: 34.99 },
-      { id: 3, name: 'Producto Destacado 3', price: 44.99 },
+      { id: 1, name: 'Producto Destacado 1', price: 29.99 },
+      { id: 2, name: 'Producto Destacado 2', price: 39.99 },
+      { id: 3, name: 'Producto Destacado 3', price: 49.99 },
+    ];
+
+    const sampleSpecialOffers = [
+      { id: 4, name: 'Oferta Especial 1', price: 19.99 },
+      { id: 5, name: 'Oferta Especial 2', price: 24.99 },
+      { id: 6, name: 'Oferta Especial 3', price: 29.99 },
+    ];
+
+    const samplePopularCategories = [
+      { id: 7, name: 'Electrónicos' },
+      { id: 8, name: 'Ropa' },
+      { id: 9, name: 'Hogar y Jardín' },
     ];
 
     setFeaturedProducts(sampleFeaturedProducts);
+    setSpecialOffers(sampleSpecialOffers);
+    setPopularCategories(samplePopularCategories);
   }, []);
 
   return (
@@ -33,7 +47,23 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Agrega aquí otras secciones como ofertas especiales, categorías populares, etc. */}
+      <section className="special-offers-section">
+        <h2>Ofertas Especiales</h2>
+        <div className="product-list">
+          {specialOffers.map(offer => (
+            <ProductCard key={offer.id} product={offer} />
+          ))}
+        </div>
+      </section>
+
+      <section className="popular-categories-section">
+        <h2>Categorías Populares</h2>
+        <ul>
+          {popularCategories.map(category => (
+            <li key={category.id}>{category.name}</li>
+          ))}
+        </ul>
+      </section>
     </div>
   );
 };
