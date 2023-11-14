@@ -3,3 +3,72 @@
   padding: 0;
 }
 
+/* HOME PAGE*/
+
+/* Estilos generales para la página Home */
+.home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+/* Estilos para la sección de Productos Destacados */
+.featured-products-section {
+  margin-bottom: 32px;
+}
+
+.featured-products-section h2 {
+  color: #2094f3;
+}
+
+/* Estilos para la lista de productos destacados */
+.product-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Estilos Componente ProductCard */
+.product-card {
+  border: 1px solid #1565c1;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px 0;
+  width: 200px;
+  text-align: center;
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.product-card h3 {
+  color: #2094f3;
+  margin: 8px 0;
+}
+
+.product-card p {
+  color: #50c2f7;
+  margin: 8px 0;
+}
+
+.product-card button {
+  background-color: #80d3fa;
+  color: white;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.product-card button:hover {
+  background-color: #b6e6fc;
+}
+
+
+
+
+
+

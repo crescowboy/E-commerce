@@ -21,10 +21,10 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <div className="home-container">
       <h1>Bienvenido a nuestro Ecommerce</h1>
 
-      <section>
+      <section className="featured-products-section">
         <h2>Productos Destacados</h2>
         <div className="product-list">
           {featuredProducts.map(product => (
@@ -33,15 +33,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section>
-        <h2>Ofertas Especiales</h2>
-        {/* Agrega aquí ofertas especiales */}
-      </section>
-
-      <section>
-        <h2>Categorías Populares</h2>
-        {/* Agrega aquí categorías populares */}
-      </section>
+      {/* Agrega aquí otras secciones como ofertas especiales, categorías populares, etc. */}
     </div>
   );
 };
