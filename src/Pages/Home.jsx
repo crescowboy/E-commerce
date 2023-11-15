@@ -1,6 +1,7 @@
 // src/components/Home.js
 import React, { useState, useEffect } from 'react';
 import ProductCard from './ProductCard';
+import Nav from '../Nav';
 
 const Home = () => {
   const [featuredProducts, setFeaturedProducts] = useState([]);
@@ -36,6 +37,9 @@ const Home = () => {
 
   return (
     <div className="home-container">
+      <header>
+        <Nav></Nav>
+      </header>
       <h1>Bienvenido a nuestro Ecommerce</h1>
 
       <section className="featured-products-section">
