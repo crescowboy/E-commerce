@@ -41,7 +41,7 @@ html{
   border-radius: 5px;
   padding: 16px;
   margin: 16px 0;
-  width: 200px;
+  width: 300px;
   text-align: center;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
 }
@@ -139,6 +139,14 @@ html{
 
 .navbar-links a:hover {
   text-decoration: underline;
+}
+
+/* PAGINA CATALOGO */
+
+.catalogo-container{
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 16px;
 }
 
 
