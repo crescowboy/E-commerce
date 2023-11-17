@@ -154,6 +154,53 @@ html{
   padding: 16px;
 }
 
+/* CARRRITO PAGE  */
+
+.cart-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.cart-items {
+  display: grid;
+  grid-gap: 15px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.cart-item input {
+  width: 40px;
+  margin-right: 10px;
+}
+
+.cart-total {
+  margin-top: 20px;
+  text-align: right;
+  font-weight: bold;
+}
+
+.cart-total button {
+  background-color: #2094f3;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cart-total button:hover {
+  background-color: #1565c1;
+}
+
+
 
 
 

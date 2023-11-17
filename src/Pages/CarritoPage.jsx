@@ -35,7 +35,7 @@ const CarritoPage = () => {
       <header>
         <Nav></Nav>
       </header>
-      <h1>Carrito de Compras</h1>
+      <h1 className="cart-title">Carrito de Compras</h1>
       <div className="cart-items">
         {cartItems.map((item) => (
           <div key={item.id} className="cart-item">
