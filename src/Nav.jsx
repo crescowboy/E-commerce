@@ -11,7 +11,7 @@ const Nav = () => {
       <div className="navbar-links">
         <Link to="/">Inicio</Link>
         <Link to="/catalogo">Catálogo</Link>
-        <Link to="/cart">Carrito</Link>
+        <Link to="/carrito">Carrito</Link>
         <Link to="/login">Iniciar Sesión</Link>
       </div>
     </nav>
