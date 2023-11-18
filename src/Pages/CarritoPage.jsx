@@ -41,7 +41,7 @@ const CarritoPage = () => {
           <div key={item.id} className="cart-item">
             <div>
               <span>{item.name}</span>
-              <span>${item.price.toFixed(2)}</span>
+              <span> ${item.price.toFixed(2)} </span>
               <span>Cantidad: {item.quantity}</span>
             </div>
             <div>
@@ -50,7 +50,7 @@ const CarritoPage = () => {
                 value={item.quantity}
                 onChange={(e) => handleQuantityChange(item.id, parseInt(e.target.value))}
               />
-              <button onClick={() => handleRemoveItem(item.id)}>Eliminar</button>
+              <button className='btn-eliminar' onClick={() => handleRemoveItem(item.id)}>Eliminar</button>
             </div>
           </div>
         ))}
