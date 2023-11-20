@@ -1,5 +1,6 @@
 // src/components/PaymentPage.js
 import React, { useState } from 'react';
+import Swal from 'sweetalert';
 import Nav from '../Nav';
 
 const PagoPage = () => {
@@ -24,7 +25,12 @@ const PagoPage = () => {
 
   const handlePlaceOrder = () => {
     // Lógica para procesar el pedido y realizar el pago
-    alert('¡Orden confirmada y pago procesado!');
+    Swal({
+      title: '¡Pago confirmado!',
+      text: '¡Tu orden ha sido confirmada y el pago ha sido procesado exitosamente!',
+      icon: 'success',
+      button: 'OK',
+    });
   };
 
   return (
@@ -46,6 +52,24 @@ const PagoPage = () => {
               onChange={handleInputChange}
             />
           </label>
+          <label>
+            Direccion:
+            <input
+              type="text"
+              name="address"
+              value={shippingInfo.address}
+              onChange={handleInputChange}
+            />
+          </label>
+          <label>
+            Ciudad:
+            <input
+              type="text"
+              name="city"
+              value={shippingInfo.city}
+              onChange={handleInputChange}
+            />
+          </label>
           {/* Agrega más campos según sea necesario */}
         </form>
       </div>
@@ -61,6 +85,16 @@ const PagoPage = () => {
               onChange={() => handlePaymentMethodChange('creditCard')}
             />
           </label>
+          <label>
+            Tarjeta de Debito
+            <input
+              type="radio"
+              value="debitCard"
+              checked={paymentMethod === 'debitCard'}
+              onChange={() => handlePaymentMethodChange('debitCard')}
+            />
+          </label>
+          
           {/* Agrega más opciones de pago según sea necesario */}
         </div>
       </div>
