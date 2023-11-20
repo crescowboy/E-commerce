@@ -1,8 +1,10 @@
 // src/components/CartPage.js
 import React, { useState } from 'react';
 import Nav from '../Nav';
+import { useNavigate } from 'react-router-dom';
 
 const CarritoPage = () => {
+  const navigate = useNavigate()
   // Ejemplo de datos de productos en el carrito (puedes obtenerlos desde el estado global, etc.)
   const [cartItems, setCartItems] = useState([
     { id: 1, name: 'Producto 1', price: 19.99, quantity: 2 },
@@ -29,6 +31,10 @@ const CarritoPage = () => {
   const calculateTotal = () => {
     return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
   };
+
+  const irPago = () =>{
+    navigate('/pago')
+  }
 
   return (
     <div className="cart-container">
@@ -57,7 +63,7 @@ const CarritoPage = () => {
       </div>
       <div className="cart-total">
         <span>Total: ${calculateTotal().toFixed(2)}</span>
-        <button onClick={() => alert('¡Proceder al pago!')}>Proceder al Pago</button>
+        <button onClick={() => irPago()}>Proceder al Pago</button>
       </div>
     </div>
   );
