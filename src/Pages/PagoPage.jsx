@@ -70,7 +70,7 @@ const PagoPage = () => {
               onChange={handleInputChange}
             />
           </label>
-          {/* Agrega más campos según sea necesario */}
+          
         </form>
       </div>
       <div className="payment-method">
@@ -95,7 +95,7 @@ const PagoPage = () => {
             />
           </label>
           
-          {/* Agrega más opciones de pago según sea necesario */}
+          
         </div>
       </div>
       <button onClick={handlePlaceOrder}>Confirmar Orden y Pagar</button>
