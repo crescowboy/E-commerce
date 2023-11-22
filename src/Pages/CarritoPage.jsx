@@ -1,15 +1,18 @@
 // src/components/CartPage.js
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Nav from '../Nav';
 import { useNavigate } from 'react-router-dom';
+import { Contexto } from '../Context/Contexto';
 
 const CarritoPage = () => {
   const navigate = useNavigate()
   // Ejemplo de datos de productos en el carrito (puedes obtenerlos desde el estado global, etc.)
-  const [cartItems, setCartItems] = useState([
-    { id: 1, name: 'Producto 1', price: 19.99, quantity: 2 },
-    { id: 2, name: 'Producto 2', price: 29.99, quantity: 1 },
-  ]);
+  // const [cartItems, setCartItems] = useState([
+  //   { id: 1, name: 'Producto 1', price: 19.99, quantity: 2 },
+  //   { id: 2, name: 'Producto 2', price: 29.99, quantity: 1 },
+  // ]);
+
+  const {cartItems, setCartItems} = useContext(Contexto);
 
   // Función para ajustar la cantidad de un producto en el carrito
   const handleQuantityChange = (productId, newQuantity) => {

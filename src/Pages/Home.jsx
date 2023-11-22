@@ -1,12 +1,14 @@
 // src/components/Home.js
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import ProductCard from './ProductCard';
 import Nav from '../Nav';
+import { Contexto } from '../Context/Contexto';
 
 const Home = () => {
   const [featuredProducts, setFeaturedProducts] = useState([]);
   const [specialOffers, setSpecialOffers] = useState([]);
   const [popularCategories, setPopularCategories] = useState([]);
+  const {cartItems, setCartItems} = useContext(Contexto);
 
   useEffect(() => {
     // Aquí puedes hacer solicitudes a tu backend para obtener datos específicos
@@ -35,6 +37,15 @@ const Home = () => {
     setPopularCategories(samplePopularCategories);
   }, []);
 
+  const aggCarrito=(product)=>{
+    let cartItemsUpdate = [...cartItems];
+
+    cartItemsUpdate.push(product)
+    setCartItems(cartItemsUpdate)
+
+    console.log(cartItems)
+  }
+
   return (
     <div className="home-container">
       <header>
@@ -46,7 +57,7 @@ const Home = () => {
         <h2>Productos Destacados</h2>
         <div className="product-list">
           {featuredProducts.map(product => (
-            <ProductCard key={product.id} product={product} />
+            <ProductCard key={product.id} product={product} aggCarrito={aggCarrito}/>
           ))}
         </div>
       </section>
@@ -55,7 +66,7 @@ const Home = () => {
         <h2>Ofertas Especiales</h2>
         <div className="product-list">
           {specialOffers.map(offer => (
-            <ProductCard key={offer.id} product={offer} />
+            <ProductCard key={offer.id} product={offer} aggCarrito={aggCarrito}/>
           ))}
         </div>
       </section>
