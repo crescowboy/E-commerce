@@ -1,6 +1,7 @@
 // src/components/CatalogoPage.js
 import React, { useContext, useEffect, useState } from 'react';
 import ProductCard from './ProductCard';
+import {toast} from 'react-toastify'
 import Nav from '../Nav';
 import { Contexto } from '../Context/Contexto';
 
@@ -83,7 +84,14 @@ const CatalogoPage = () => {
 
     cartItemsUpdate.push(product)
     setCartItems(cartItemsUpdate)
-
+    toast.success('¡Éxito!', {
+      position: 'top-right',
+      autoClose: 2000, // Cerrar automáticamente después de 3 segundos
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+    });
     console.log(cartItems)
   }
 

@@ -1,6 +1,8 @@
 // src/components/Home.js
 import React, { useState, useEffect, useContext } from 'react';
 import ProductCard from './ProductCard';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Nav from '../Nav';
 import { Contexto } from '../Context/Contexto';
 
@@ -38,13 +40,24 @@ const Home = () => {
   }, []);
 
   const aggCarrito=(product)=>{
+    
     let cartItemsUpdate = [...cartItems];
 
     cartItemsUpdate.push(product)
     setCartItems(cartItemsUpdate)
 
+    toast.success('¡Éxito!', {
+      position: 'top-right',
+      autoClose: 2000, // Cerrar automáticamente después de 3 segundos
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+    });
     console.log(cartItems)
   }
+
+  
 
   return (
     <div className="home-container">
