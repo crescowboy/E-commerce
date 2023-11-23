@@ -41,10 +41,23 @@ const Home = () => {
 
   const aggCarrito=(product)=>{
     
-    let cartItemsUpdate = [...cartItems];
+    // Crear una copia del array cartItems
+  let cartItemsUpdate = [...cartItems];
 
-    cartItemsUpdate.push(product)
-    setCartItems(cartItemsUpdate)
+  // Verificar si el producto ya está en el carrito
+  const existingProductIndex = cartItemsUpdate.findIndex(
+    (item) => item.id === product.id
+  );
+
+  // Si el producto ya está en el carrito, incrementar la cantidad
+  if (existingProductIndex !== -1) {
+    cartItemsUpdate[existingProductIndex].quantity += 1;
+  } else {
+    // Si el producto no está en el carrito, agregarlo con una cantidad inicial de 1
+    cartItemsUpdate.push({ ...product, quantity: 1 });
+  }
+
+  setCartItems(cartItemsUpdate)
 
     toast.success('¡Éxito!', {
       position: 'top-right',

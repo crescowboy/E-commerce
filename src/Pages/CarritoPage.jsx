@@ -16,6 +16,7 @@ const CarritoPage = () => {
 
   // Función para ajustar la cantidad de un producto en el carrito
   const handleQuantityChange = (productId, newQuantity) => {
+    
     setCartItems((prevCartItems) =>
       prevCartItems.map((item) =>
         item.id === productId ? { ...item, quantity: newQuantity } : item

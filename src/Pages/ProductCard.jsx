@@ -3,7 +3,8 @@ import React, { useContext } from 'react';
 import { Contexto } from '../Context/Contexto';
 
 const ProductCard = ({ product, aggCarrito }) => {
-  const { id, name, price } = product;
+  const { id, name, price, } = product;
+  const quantity = 1;
   // const {cartItems, setCartItems} = useContext(Contexto);
 
   const agregarAlCarrito = () => {
