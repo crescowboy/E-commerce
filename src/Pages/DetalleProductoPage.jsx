@@ -1,11 +1,15 @@
 // src/components/ProductDetailPage.js
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
-import ProductCard from './ProductCard';
+import ProductDetail from './ProductDetail';
+import { Contexto } from '../Context/Contexto';
+import { toast } from 'react-toastify';
+import Nav from '../Nav';
 
 const DetalleProductoPage = () => {
   const { productId } = useParams();
   const [product, setProduct] = useState(null);
+  const { cartItems, setCartItems } = useContext(Contexto);
 
   useEffect(() => {
     // Simula una llamada al backend para obtener detalles del producto
@@ -25,20 +29,44 @@ const DetalleProductoPage = () => {
     fetchProductDetails();
   }, [productId]);
 
-  const handleAddToCart = () => {
-    // Simula la lógica de agregar al carrito
-    console.log(`Product ${productId} added to the cart.`);
+  const addToCart = () => {
+    let cartItemsUpdate = [...cartItems];
+
+    // Verificar si el producto ya está en el carrito
+    const existingProductIndex = cartItemsUpdate.findIndex(
+      (item) => item.id === product.id
+    );
+
+    // Si el producto ya está en el carrito, incrementar la cantidad
+    if (existingProductIndex !== -1) {
+      cartItemsUpdate[existingProductIndex].quantity += 1;
+    } else {
+      // Si el producto no está en el carrito, agregarlo con una cantidad inicial de 1
+      cartItemsUpdate.push({ ...product, quantity: 1 });
+    }
+
+    setCartItems(cartItemsUpdate);
+    toast.success('¡Éxito!', {
+      position: 'top-right',
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+    });
+    console.log(cartItems);
   };
 
   return (
     <div>
+      <header>
+        <Nav></Nav>
+      </header>
       {product ? (
         <>
           <h1>{product.name}</h1>
-          <ProductCard product={product} />
-          <p>{product.description}</p>
-          <p>Price: ${product.price}</p>
-          <button onClick={handleAddToCart}>Add to Cart</button>
+          <ProductDetail product={product} />
+          <button onClick={addToCart}>Add to Cart</button>
           {/* Puedes agregar más detalles del producto según tus necesidades */}
         </>
       ) : (
