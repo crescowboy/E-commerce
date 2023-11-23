@@ -58,7 +58,7 @@ const DetalleProductoPage = () => {
   };
 
   return (
-    <div>
+    <div className='product-details-container'>
       <header>
         <Nav></Nav>
       </header>

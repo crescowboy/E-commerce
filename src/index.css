@@ -268,7 +268,13 @@ button:hover {
   background-color: #1565c1;
 }
 
+/* DETALLE PRODUCTO PAGE */
 
+.product-details-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
 
 

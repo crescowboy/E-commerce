@@ -14,7 +14,7 @@ const ProductCard = ({ product, aggCarrito }) => {
   };
 
   const detalleProducto=()=>{
-    navigate('detalleProducto');
+    navigate('/detalleProducto');
   }
 
   return (
