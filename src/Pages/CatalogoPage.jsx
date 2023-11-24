@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom';
 const CatalogoPage = () => {
   const [products, setProducts] = useState([]);
   const {cartItems, setCartItems} = useContext(Contexto)
+  const {itemSelected, setItemSelected} = useContext(Contexto)
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -112,7 +113,9 @@ const CatalogoPage = () => {
 
   const detalleProduct = (product) => {
     // Aquí navegas a la página de detalle y pasas los datos del producto
-    navigate('/detalleProducto', { state: product });
+    setItemSelected(product)
+    console.log(product)
+    navigate('/detalleProducto');
   };
 
   return (

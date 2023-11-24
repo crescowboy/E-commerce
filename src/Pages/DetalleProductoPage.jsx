@@ -124,7 +124,7 @@ const DetalleProductoPage = () => {
       </header>
       
         <div>
-          <h1>{itemSelected.name}</h1>
+          {/* <h1>{itemSelected.name}</h1> */}
           <ProductDetail product={itemSelected} />
           <button onClick={addToCart}>Add to Cart</button>
           {/* Puedes agregar más detalles del producto según tus necesidades */}

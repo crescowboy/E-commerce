@@ -276,5 +276,20 @@ button:hover {
   padding: 20px;
 }
 
+.product-details-container button{
+  width: 200px;
+  border-radius: 8px;
+}
+
+/* COMPONENTE PRODUCT DETAIL */
+.product-detail{
+  padding: 10px;
+  margin-top: 40px;
+}
+.product-detail img{
+  width: 400px;
+}
+
+
 
 
