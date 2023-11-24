@@ -4,10 +4,12 @@ import ProductCard from './ProductCard';
 import {toast} from 'react-toastify'
 import Nav from '../Nav';
 import { Contexto } from '../Context/Contexto';
+import { useNavigate } from 'react-router-dom';
 
 const CatalogoPage = () => {
   const [products, setProducts] = useState([]);
   const {cartItems, setCartItems} = useContext(Contexto)
+  const navigate = useNavigate()
 
   useEffect(() => {
     // Simula una llamada al backend para obtener la lista de productos
@@ -108,6 +110,11 @@ const CatalogoPage = () => {
     console.log(cartItems)
   }
 
+  const detalleProduct = (product) => {
+    // Aquí navegas a la página de detalle y pasas los datos del producto
+    navigate('/detalleProducto', { state: product });
+  };
+
   return (
     <div className="catalogo-container">
       <header>
@@ -116,7 +123,7 @@ const CatalogoPage = () => {
       <h1>Catálogo de Productos</h1>
       <div className="product-list">
         {products.map((product) => (
-          <ProductCard key={product.id} product={product} aggCarrito={aggCarrito} />
+          <ProductCard key={product.id} product={product} aggCarrito={aggCarrito} detalleProduct={detalleProduct} />
         ))}
       </div>
     </div>

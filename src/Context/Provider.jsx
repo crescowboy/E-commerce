@@ -4,6 +4,7 @@ import { Contexto } from './Contexto'
 const Provider = ({children}) => {
 
   const [cartItems, setCartItems] = useState([]);
+  const [itemSelected, setItemSelected] = useState();
 
   
 
@@ -12,6 +13,8 @@ const Provider = ({children}) => {
     <Contexto.Provider value={{
       cartItems,
       setCartItems,
+      itemSelected,
+      setItemSelected
     }}>
         {children}
     </Contexto.Provider>

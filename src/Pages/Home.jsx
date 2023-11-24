@@ -5,12 +5,15 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Nav from '../Nav';
 import { Contexto } from '../Context/Contexto';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
   const [featuredProducts, setFeaturedProducts] = useState([]);
   const [specialOffers, setSpecialOffers] = useState([]);
   const [popularCategories, setPopularCategories] = useState([]);
   const {cartItems, setCartItems} = useContext(Contexto);
+  const {itemSelected, setItemSelected} = useContext(Contexto);
+  const navigate = useNavigate()
 
   useEffect(() => {
     // Aquí puedes hacer solicitudes a tu backend para obtener datos específicos
@@ -69,7 +72,12 @@ const Home = () => {
     });
     console.log(cartItems)
   }
-
+  const detalleProduct = (product) => {
+    // Aquí navegas a la página de detalle y pasas los datos del producto
+    setItemSelected(product)
+    console.log(product)
+    navigate('/detalleProducto');
+  };
   
 
   return (
@@ -83,7 +91,7 @@ const Home = () => {
         <h2>Productos Destacados</h2>
         <div className="product-list">
           {featuredProducts.map(product => (
-            <ProductCard key={product.id} product={product} aggCarrito={aggCarrito}/>
+            <ProductCard key={product.id} product={product} aggCarrito={aggCarrito} detalleProduct={detalleProduct}/>
           ))}
         </div>
       </section>
@@ -92,7 +100,7 @@ const Home = () => {
         <h2>Ofertas Especiales</h2>
         <div className="product-list">
           {specialOffers.map(offer => (
-            <ProductCard key={offer.id} product={offer} aggCarrito={aggCarrito}/>
+            <ProductCard key={offer.id} product={offer} aggCarrito={aggCarrito} detalleProduct={detalleProduct}/>
           ))}
         </div>
       </section>
