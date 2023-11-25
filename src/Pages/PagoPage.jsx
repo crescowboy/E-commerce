@@ -38,6 +38,7 @@ const PagoPage = () => {
       <header>
         <Nav />
       </header>
+      <div className='payment-contenido'>
       <h1>Página de Pago</h1>
       <div className="shipping-info">
         <h2>Información de Envío y Facturación</h2>
@@ -63,6 +64,25 @@ const PagoPage = () => {
           </label>
           <label>
             Ciudad:
+            <input
+              type="text"
+              name="city"
+              value={shippingInfo.city}
+              onChange={handleInputChange}
+            />
+          </label>
+          <label>
+            Email:
+            <input
+              type="text"
+              name="city"
+              value={shippingInfo.city}
+              onChange={handleInputChange}
+            />
+          </label>
+          
+          <label>
+            Celular:
             <input
               type="text"
               name="city"
@@ -96,9 +116,11 @@ const PagoPage = () => {
           </label>
           
           
+          
         </div>
       </div>
       <button onClick={handlePlaceOrder}>Confirmar Orden y Pagar</button>
+    </div>
     </div>
   );
 };
