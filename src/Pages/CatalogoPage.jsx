@@ -15,68 +15,19 @@ const CatalogoPage = () => {
   useEffect(() => {
     // Simula una llamada al backend para obtener la lista de productos
     const fetchProducts = async () => {
-      // Simulación de datos de productos
-      const fakeProductData = [
-        {
-          id: 1,
-          name: 'Producto 1',
-          description: 'Descripción del Producto 1.',
-          price: 19.99,
-          imageUrl: 'https://via.placeholder.com/200x200?text=Product1',
-        },
-        {
-          id: 2,
-          name: 'Producto 2',
-          description: 'Descripción del Producto 2.',
-          price: 29.99,
-          imageUrl: 'https://via.placeholder.com/200x200?text=Product2',
-        },
-        {
-          id: 3,
-          name: 'Producto 3',
-          description: 'Descripción del Producto 3.',
-          price: 34.99,
-          imageUrl: 'https://via.placeholder.com/200x200?text=Product3',
-        },
-        {
-          id: 4,
-          name: 'Producto 1',
-          description: 'Descripción del Producto 1.',
-          price: 19.99,
-          imageUrl: 'https://via.placeholder.com/200x200?text=Product1',
-        },
-        {
-          id: 5,
-          name: 'Producto 2',
-          description: 'Descripción del Producto 2.',
-          price: 29.99,
-          imageUrl: 'https://via.placeholder.com/200x200?text=Product2',
-        },
-        {
-          id: 6,
-          name: 'Producto 3',
-          description: 'Descripción del Producto 3.',
-          price: 34.99,
-          imageUrl: 'https://via.placeholder.com/200x200?text=Product3',
-        },
-        {
-          id: 7,
-          name: 'Producto 2',
-          description: 'Descripción del Producto 2.',
-          price: 29.99,
-          imageUrl: 'https://via.placeholder.com/200x200?text=Product2',
-        },
-        {
-          id: 8,
-          name: 'Producto 3',
-          description: 'Descripción del Producto 3.',
-          price: 34.99,
-          imageUrl: 'https://via.placeholder.com/200x200?text=Product3',
-        },
+      try{
+        const response = await fetch('http://localhost:5000/products');
+        const data = await response.json();
+        console.log('exito')
+        setProducts(data)
+      }catch(error){
+        console.error('Error de solicitud api: ',error)
+      }
+      
         // Agrega más productos según sea necesario
-      ];
+      
 
-      setProducts(fakeProductData);
+      
     };
 
     fetchProducts();
