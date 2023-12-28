@@ -40,7 +40,9 @@ const PagoPage = () => {
       </header>
       <div className='payment-contenido'>
       <h1>Página de Pago</h1>
+      <div className='form-payment'>
       <div className="shipping-info">
+        
         <h2>Información de Envío y Facturación</h2>
         <form>
           {/* Campos de información de envío y facturación */}
@@ -120,6 +122,8 @@ const PagoPage = () => {
         </div>
       </div>
       <button onClick={handlePlaceOrder}>Confirmar Orden y Pagar</button>
+      </div>
+      
     </div>
     </div>
   );
