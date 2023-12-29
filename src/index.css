@@ -234,17 +234,16 @@ html{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: beige;
-  border-radius: 8px;
-  padding: 20px;
+ 
   /* text-align: center; */
 }
 .shipping-info,
 .payment-method {
   margin-bottom: 20px;
-  max-width: 800px;
-  
-  
+  max-width: 600px;
+  background-color: beige;
+  border-radius: 8px;
+  padding: 20px;
 }
 
 

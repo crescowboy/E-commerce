@@ -63,6 +63,7 @@ const PagoPage = () => {
         text: '¡Tu orden ha sido confirmada y el pago ha sido procesado exitosamente!',
         icon: 'success',
         button: 'OK',
+        timer: 10000,
       });
     
 
@@ -78,7 +79,7 @@ const PagoPage = () => {
         <Nav />
       </header>
       <div className='payment-contenido'>
-        <h1>Página de Pago</h1>
+        {/* <h1>Página de Pago</h1> */}
           <div className='form-payment'>
             <div className="shipping-info">
         
