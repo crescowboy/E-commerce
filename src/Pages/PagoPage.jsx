@@ -1,6 +1,7 @@
 // src/components/PaymentPage.js
 import React, { useEffect, useState } from 'react';
-import Swal from 'sweetalert';
+// import Swal from 'sweetalert';
+import Swal from 'sweetalert2';
 import Nav from '../Nav';
 
 const PagoPage = () => {
@@ -57,7 +58,7 @@ const PagoPage = () => {
 
       // Realiza cualquier otra lógica de validación aquí
 
-      await  Swal({
+      await  Swal.fire({
         title: '¡Pago confirmado!',
         text: '¡Tu orden ha sido confirmada y el pago ha sido procesado exitosamente!',
         icon: 'success',
