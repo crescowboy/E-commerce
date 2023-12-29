@@ -237,7 +237,7 @@ html{
   background-color: beige;
   border-radius: 8px;
   padding: 20px;
-  text-align: center;
+  /* text-align: center; */
 }
 .shipping-info,
 .payment-method {
