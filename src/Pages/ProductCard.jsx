@@ -25,7 +25,7 @@ const ProductCard = ({ product, aggCarrito, detalleProduct}) => {
       <img src={`https://placekitten.com/200/200?image=${id}`} alt={name} />
       <h3>{name}</h3>
       <p>${price.toFixed(2)}</p>
-      <button onClick={agregarAlCarrito}>Agregar al Carrito</button>
+      <button onClick={agregarAlCarrito}>Ver Producto</button>
     </div>
   );
 };
