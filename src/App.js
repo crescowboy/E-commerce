@@ -6,6 +6,7 @@ import PagoPage from "./Pages/PagoPage";
 import Provider from "./Context/Provider";
 import ProductCard from "./Pages/ProductCard";
 import DetalleProductoPage from "./Pages/DetalleProductoPage";
+import LoginPage from "./Pages/LoginPage";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <Route path='/carrito' element={<CarritoPage></CarritoPage>}></Route>
       <Route path='/pago' element={<PagoPage></PagoPage>}></Route>
       <Route path='detalleProducto' element={<DetalleProductoPage></DetalleProductoPage>}></Route>
+      <Route path='/login' element={<LoginPage></LoginPage>}></Route>
     </Routes>
     </Provider>
     </>
