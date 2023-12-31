@@ -1,15 +1,24 @@
 // LoginPage.js
 import React, { useState } from 'react';
 import Nav from '../Nav';
+import { Link } from 'react-router-dom';
 
 const LoginPage = ({ onLogin }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const handleLogin = () => {
+    console.log(username,password)
+
+    
     // Realiza la lógica de autenticación en tu servidor
     // y llama a la función `onLogin` si la autenticación es exitosa
-    onLogin(username);
+
+    // onLogin(username);
+
+    //Limpia los campos 
+    setPassword('')
+    setUsername('')
   };
 
   return (
@@ -38,6 +47,12 @@ const LoginPage = ({ onLogin }) => {
         <button type="button" onClick={handleLogin}>
           Iniciar Sesión
         </button>
+        <div className='register-password-container'>
+          {/* <a href="#">Crea una cuenta</a> */}
+          <Link to="/signUp">Crea una cuenta</Link>
+          <a href="#">Olvidaste tu contraseña?</a>
+        </div>
+        <p></p>
       </form>
       </div>
     </div>

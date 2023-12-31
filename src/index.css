@@ -328,9 +328,10 @@ button:hover {
 
 .login form{
   width: 400px;
-  border: 2px solid black;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  border-radius: 7px;
 }
 
 .login h2{
@@ -345,4 +346,11 @@ button:hover {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.register-password-container{
+  display: flex;
+  justify-content: space-around;
+  padding: 5px;
+  font-size: 13px;
 }
