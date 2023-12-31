@@ -2,7 +2,7 @@
 import React, { useContext, useState } from 'react';
 import Nav from '../Nav';
 import { useNavigate } from 'react-router-dom';
-import Swal from 'sweetalert2';
+// import Swal from 'sweetalert2';
 import { Contexto } from '../Context/Contexto';
 import { toast } from 'react-toastify';
 

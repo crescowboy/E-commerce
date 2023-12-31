@@ -1,5 +1,6 @@
 // LoginPage.js
 import React, { useState } from 'react';
+import Nav from '../Nav';
 
 const LoginPage = ({ onLogin }) => {
   const [username, setUsername] = useState('');
@@ -12,9 +13,12 @@ const LoginPage = ({ onLogin }) => {
   };
 
   return (
-    <div>
-      <h2>Iniciar Sesión</h2>
+    <div className='home-container'>
+      <Nav></Nav>
+      <div className='login'>
+      
       <form>
+      <h2>Iniciar Sesión</h2>
         <label>
           Usuario:
           <input
@@ -35,6 +39,7 @@ const LoginPage = ({ onLogin }) => {
           Iniciar Sesión
         </button>
       </form>
+      </div>
     </div>
   );
 };

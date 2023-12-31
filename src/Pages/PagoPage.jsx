@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 // import Swal from 'sweetalert';
 import Swal from 'sweetalert2';
+import { toast } from 'react-toastify';
 import Nav from '../Nav';
 
 const PagoPage = () => {
@@ -52,7 +53,15 @@ const PagoPage = () => {
   const handlePlaceOrder = async () => {
     try {
       if (!formValid) {
-        throw new Error('Por favor, completa todos los campos antes de realizar el pedido.');
+        // throw new Error('Por favor, completa todos los campos antes de realizar el pedido.');
+        toast.success('¡Éxito!', {
+          position: 'top-right',
+          autoClose: 2000, // Cerrar automáticamente después de 3 segundos
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+        });
       }
 
 
