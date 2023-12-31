@@ -37,7 +37,12 @@ const CarritoPage = () => {
   };
 
   const irPago = () =>{
-    navigate('/pago')
+    if(cartItems.length > 0){
+      navigate('/pago')
+    }else{
+      console.log("no hay productos")
+    }
+    
   }
 
   return (
