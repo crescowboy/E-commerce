@@ -2,7 +2,9 @@
 import React, { useContext, useState } from 'react';
 import Nav from '../Nav';
 import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import { Contexto } from '../Context/Contexto';
+import { toast } from 'react-toastify';
 
 const CarritoPage = () => {
   const navigate = useNavigate()
@@ -40,6 +42,14 @@ const CarritoPage = () => {
     if(cartItems.length > 0){
       navigate('/pago')
     }else{
+      toast.error('¡Error!, No hay productos en el carrito', {
+        position: 'top-right',
+        autoClose: 2000, // Cerrar automáticamente después de 3 segundos
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
       console.log("no hay productos")
     }
     

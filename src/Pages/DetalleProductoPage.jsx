@@ -106,7 +106,7 @@ const DetalleProductoPage = () => {
     }
 
     setCartItems(cartItemsUpdate);
-    toast.success('¡Éxito!', {
+    toast.success('¡Producto agregado al carrito!', {
       position: 'top-right',
       autoClose: 2000,
       hideProgressBar: false,
