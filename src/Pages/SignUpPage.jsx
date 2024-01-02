@@ -23,8 +23,9 @@ const SignUpPage = ({ onSignUp }) => {
     <div className='home-container'>
         <Nav></Nav>
       <div className='sign-up'>
-        <h2>Crear Cuenta</h2>
+        
         <form>
+        <h2>Crear Cuenta</h2>
           <label>
             Usuario:
             <input

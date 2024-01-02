@@ -4,7 +4,7 @@ import CatalogoPage from "./Pages/CatalogoPage";
 import CarritoPage from "./Pages/CarritoPage";
 import PagoPage from "./Pages/PagoPage";
 import Provider from "./Context/Provider";
-import ProductCard from "./Pages/ProductCard";
+// import ProductCard from "./Pages/ProductCard";
 import DetalleProductoPage from "./Pages/DetalleProductoPage";
 import LoginPage from "./Pages/LoginPage";
 import SignUpPage from "./Pages/SignUpPage";

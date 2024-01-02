@@ -354,3 +354,31 @@ button:hover {
   padding: 5px;
   font-size: 13px;
 }
+
+
+/* SIGNUP PAGE */
+
+.sign-up {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh; /* Ocupa el 100% del alto de la pantalla */
+  
+}
+
+.sign-up h2{
+  text-align: center;
+} 
+
+.sign-up  form{
+  width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.sign-up button{
+  font-weight: bold;
+}
