@@ -85,7 +85,7 @@ const Home = () => {
       <header>
         <Nav></Nav>
       </header>
-      <h1>Bienvenido a nuestro Ecommerce</h1>
+      
 
       <section className="featured-products-section">
         <h2>Productos Destacados</h2>
