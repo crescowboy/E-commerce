@@ -50,7 +50,7 @@ const LoginPage = ({ onLogin }) => {
         <div className='register-password-container'>
           {/* <a href="#">Crea una cuenta</a> */}
           <Link to="/signUp">Crea una cuenta</Link>
-          <a href="#">Olvidaste tu contraseña?</a>
+          <Link to='/olvidoContraseña'>Olvidaste tu contraseña?</Link>
         </div>
         <p></p>
       </form>

@@ -8,6 +8,7 @@ import Provider from "./Context/Provider";
 import DetalleProductoPage from "./Pages/DetalleProductoPage";
 import LoginPage from "./Pages/LoginPage";
 import SignUpPage from "./Pages/SignUpPage";
+import OlvidoContrasenaPage from "./Pages/OlvidoContrasenaPage";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
       <Route path='detalleProducto' element={<DetalleProductoPage></DetalleProductoPage>}></Route>
       <Route path='/login' element={<LoginPage></LoginPage>}></Route>
       <Route path='/signUp' element={<SignUpPage></SignUpPage>}></Route>
+      <Route path='/olvidoContraseña' element={<OlvidoContrasenaPage></OlvidoContrasenaPage>}></Route>
     </Routes>
     </Provider>
     </>
