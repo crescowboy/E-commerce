@@ -382,3 +382,35 @@ button:hover {
 .sign-up button{
   font-weight: bold;
 }
+
+/* OLVIDOCNTRASEÑA PAGE */
+
+.login-contraseña {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh; /* Ocupa el 100% del alto de la pantalla */
+  
+}
+
+.login-contraseña h2{
+  text-align: center;
+} 
+
+.login-contraseña  form{
+  width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.login-contraseña button{
+  font-weight: bold;
+}
+
+.login-contraseña P{
+  text-align: center;
+  font-size: 13px;
+}

@@ -17,12 +17,13 @@ const OlvidoContrasenaPage = () => {
   };
 
   return (
-    <div className="olvido-contrasena-container">
-      <h2>¿Olvidaste tu Contraseña?</h2>
+    <div className="login-contraseña">
+      
       {enviado ? (
         <p>Se ha enviado un correo con instrucciones para restablecer tu contraseña.</p>
       ) : (
         <form onSubmit={handleEnviarCorreo}>
+            <h2>¿Olvidaste tu Contraseña?</h2>
           <label>
             Correo Electrónico:
             <input
@@ -33,11 +34,12 @@ const OlvidoContrasenaPage = () => {
             />
           </label>
           <button type="submit">Enviar Correo</button>
+          <p>
+        ¿Recuerdas tu contraseña? <Link to="/login">Inicia Sesión</Link>
+        </p>
         </form>
       )}
-      <p>
-        ¿Recuerdas tu contraseña? <Link to="/login">Inicia Sesión</Link>
-      </p>
+      
     </div>
   );
 };
