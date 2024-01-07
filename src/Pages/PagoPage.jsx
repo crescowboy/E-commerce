@@ -50,36 +50,50 @@ const PagoPage = () => {
   
   
 
-  const handlePlaceOrder = async () => {
+  const handlePlaceOrder = async (e) => {
+    e.preventDefault(); // Evitar el envío automático del formulario
+
+    // Realizar la validación del formulario
+  const form = e.target.form;
+  if(form.reportValidity()){
     try {
-      if (!formValid) {
+      console.log('formValid:', formValid);
+      console.log('campos: ',shippingInfo)
+      if (formValid) {
         // throw new Error('Por favor, completa todos los campos antes de realizar el pedido.');
-        toast.success('¡Éxito!', {
-          position: 'top-right',
-          autoClose: 2000, // Cerrar automáticamente después de 3 segundos
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
+        // toast.success('¡Éxito!', {
+        //   position: 'top-right',
+        //   autoClose: 2000, // Cerrar automáticamente después de 3 segundos
+        //   hideProgressBar: false,
+        //   closeOnClick: true,
+        //   pauseOnHover: true,
+        //   draggable: true,
+        // });
+
+
+        await  Swal.fire({
+          title: '¡Pago confirmado!',
+          text: '¡Tu orden ha sido confirmada y el pago ha sido procesado exitosamente!',
+          icon: 'success',
+          button: 'OK',
+          
         });
       }
 
 
       // Realiza cualquier otra lógica de validación aquí
 
-      await  Swal.fire({
-        title: '¡Pago confirmado!',
-        text: '¡Tu orden ha sido confirmada y el pago ha sido procesado exitosamente!',
-        icon: 'success',
-        button: 'OK',
-        timer: 10000,
-      });
+      
     
 
       // Continúa con cualquier lógica adicional después de que el usuario confirme el pago
     } catch (error) {
       alert(error.message);
     }
+  }else{
+    alert("Faltan datos por completar");
+  }
+    
   };
 
   return (
@@ -169,7 +183,7 @@ const PagoPage = () => {
                 </label>
               
           </div>
-          <button type='submit' onClick={handlePlaceOrder} >Confirmar Orden y Pagar</button>
+          <button type='button' onClick={handlePlaceOrder} >Confirmar Orden y Pagar</button>
           </form>
           <div className="payment-method">
             
