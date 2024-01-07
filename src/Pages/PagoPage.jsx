@@ -78,6 +78,18 @@ const PagoPage = () => {
           button: 'OK',
           
         });
+
+        // Limpiar los campos del formulario después de la orden exitosa
+      setShippingInfo({
+        fullName: '',
+        address: '',
+        city: '',
+        country: '',
+        email: '',
+        cell: ''
+        // ...otros campos de información de envío y facturación
+      });
+      setPaymentMethod('creditCard'); // También puedes restablecer el método de pago predeterminado
       }
 
 
@@ -91,7 +103,14 @@ const PagoPage = () => {
       alert(error.message);
     }
   }else{
-    alert("Faltan datos por completar");
+    toast.error('¡Faltan campos por completar!', {
+        position: 'top-right',
+        autoClose: 2000, // Cerrar automáticamente después de 3 segundos
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
   }
     
   };
